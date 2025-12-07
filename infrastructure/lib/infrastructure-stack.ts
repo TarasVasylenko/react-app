@@ -35,7 +35,7 @@ export class SecureWebStack extends cdk.Stack {
         });
 
         new BucketDeployment(this, 'ReactAppBucketDeployment', {
-            sources: [Source.asset('../front-end/dist')],
+            sources: [Source.asset('../dist')],
             destinationBucket: ReactAppBucket,
             distribution: distribution,
             distributionPaths: ['/*'],
