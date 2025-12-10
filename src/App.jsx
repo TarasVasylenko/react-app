@@ -3,6 +3,8 @@ import { Routes, Route, Link } from 'react-router-dom'
 import { createContext, useContext } from 'react'
 import reactLogo from './assets/react.svg'
 
+import ToDo from './components/ToDo';
+
 const AppContext = createContext(null)
 
 function useAppContext() {
@@ -52,6 +54,7 @@ function Contacts() {
   )
 }
 
+
 function App() {
   const contextValue = {
     appName: 'My React Router App',
@@ -72,26 +75,30 @@ function App() {
             <h1>My React Router App</h1>
           </div>
           <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/contacts">Contacts</Link>
-              </li>
-            </ul>
+              <ul>
+                  <li>
+                      <Link to="/">Home</Link>
+                  </li>
+                  <li>
+                      <Link to="/about">About</Link>
+                  </li>
+                  <li>
+                      <Link to="/contacts">Contacts</Link>
+                  </li>
+                  <li>
+                      <Link to="/todo">ToDo</Link>
+                  </li>
+              </ul>
           </nav>
         </header>
 
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contacts" element={<Contacts />} />
-          </Routes>
+          <main>
+              <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contacts" element={<Contacts />} />
+                  <Route path="/todo" element={<ToDo />} />
+              </Routes>
         </main>
       </div>
     </AppContext.Provider>
